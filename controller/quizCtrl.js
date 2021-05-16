@@ -23,6 +23,33 @@ const create = async (req, res) => {
   }
 };
 
+const getById = async (req, res) => {
+  try {
+    const quiz = await Quiz.findById(req.params.id);
+    return res.status(200).json(quiz);
+  } catch (error) {
+    // console.log(error.message);
+    return res.status(500).json({ message: "Something went wrong" });
+  }
+};
+
+const updateById = async (req, res) => {
+  try {
+    const { question, correct_answer } = req.body;
+
+    const payload = {
+      question,
+      correct_answer,
+    };
+
+    const quiz = await Quiz.findByIdAndUpdate(req.params.id, payload);
+    return res.status(200).json({ message: "Question X Updated" });
+  } catch (error) {
+    // console.log(error.message);
+    return res.status(500).json({ message: "Something went wrong" });
+  }
+};
+
 const deleteById = async (req, res) => {
   try {
     const quiz = await Quiz.findByIdAndDelete(req.params.id);
@@ -33,4 +60,4 @@ const deleteById = async (req, res) => {
   }
 };
 
-module.exports = { getAll, create, deleteById };
+module.exports = { getAll, create, getById, updateById, deleteById };
