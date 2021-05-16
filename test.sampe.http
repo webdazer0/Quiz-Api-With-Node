@@ -1,0 +1,37 @@
+@host = localhost:4500/api/quiz
+
+##### GET ALL QUESTIONS
+GET http://{{host}}/ HTTP/1.1
+content-type: application/json
+
+##### POST
+POST http://{{host}}/ HTTP/1.1
+content-type: application/json
+
+{
+  "answers": [
+    "essere trattate come tutte le altre escrezioni emesse da pazienti sani",
+    "essere decontaminate prima di essere *smaltite*",
+    "essere raccolte in appositi contenitori e *gestite* come rifiuti speciali pericolosi",
+    "nessuna delle risposte"
+  ],
+  "question": "In un ospite non autosufficente e affetto da HIV, le urine e le feci devono: ",
+  "correct_answer": "essere trattate come tutte le altre escrezioni emesse da pazienti sani"
+}
+
+##### GET A SINGLE QUESTION
+GET http://{{host}}/5f708b4d06484e0ba0c3f360 HTTP/1.1
+content-type: application/json
+
+##### PUT A SINGLE QUESTION
+PUT http://{{host}}/5f708b4d06484e0ba0c3f360 HTTP/1.1
+content-type: application/json
+
+{
+  "question": "In un ospite non autosufficente e affetto da HIV, le urine e le feci devono: ",
+  "correct_answer": "essere trattate come tutte le altre escrezioni emesse da pazienti sani"
+}
+
+##### DELETE A SINGLE QUESTION
+DELETE http://{{host}}/Yj03IbpLHD3MtnRaZEX5 HTTP/1.1
+content-type: application/json
