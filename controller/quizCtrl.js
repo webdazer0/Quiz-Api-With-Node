@@ -43,6 +43,8 @@ const updateById = async (req, res) => {
     };
 
     const quiz = await Quiz.findByIdAndUpdate(req.params.id, payload);
+    // console.log(quiz);
+    // findByIdAndUpdate ci ritornerà l'anteriore oggetto, si puo modificarlo e settarlo per ricevero quello nuovo/modified
     return res.status(200).json({ message: "Question X Updated" });
   } catch (error) {
     // console.log(error.message);
