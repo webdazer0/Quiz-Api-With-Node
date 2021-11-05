@@ -4,7 +4,7 @@ if (process.env.NODE_ENV !== "production") {
 
 const app = require("./app");
 
-app.listen(4500, () => {
-  console.log("Server on port :", 4500);
+app.listen(app.get("port"), () => {
+  console.log("Server on port :", app.get("port"));
   console.log("Environment:", process.env.NODE_ENV);
 });
