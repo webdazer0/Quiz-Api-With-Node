@@ -1,15 +1,18 @@
 const { Router } = require("express");
 const router = Router();
+const quizController = require("../controller/quiz.controller");
 
-const quizCtrl = require("../controller/quizCtrl");
-
-router.get("/", quizCtrl.getAll);
-router.post("/", quizCtrl.create);
+const myRoute = "/quiz";
 
 router
-  .route("/:id")
-  .get(quizCtrl.getById)
-  .put(quizCtrl.updateById)
-  .delete(quizCtrl.deleteById);
+  .route(`${myRoute}`)
+  .get(quizController.getAll)
+  .post(quizController.create);
+
+router
+  .route(`${myRoute}/:id`)
+  .get(quizController.getById)
+  .put(quizController.updateById)
+  .delete(quizController.deleteById);
 
 module.exports = router;

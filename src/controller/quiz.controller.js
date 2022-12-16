@@ -1,5 +1,4 @@
 const Quiz = require("../model/Quiz");
-const path = require("path");
 
 const getAll = async (req, res) => {
   try {
@@ -18,7 +17,6 @@ const create = async (req, res) => {
     await newQuiz.save();
     return res.status(200).json({ message: "Question X Saved" });
   } catch (error) {
-    // console.log(error.message);
     return res.status(500).json({ message: "Something went wrong" });
   }
 };
@@ -28,7 +26,6 @@ const getById = async (req, res) => {
     const quiz = await Quiz.findById(req.params.id);
     return res.status(200).json(quiz);
   } catch (error) {
-    // console.log(error.message);
     return res.status(500).json({ message: "Something went wrong" });
   }
 };
@@ -47,7 +44,6 @@ const updateById = async (req, res) => {
     // findByIdAndUpdate ci ritornerà l'anteriore oggetto, si puo modificarlo e settarlo per ricevero quello nuovo/modified
     return res.status(200).json({ message: "Question X Updated" });
   } catch (error) {
-    // console.log(error.message);
     return res.status(500).json({ message: "Something went wrong" });
   }
 };
@@ -57,7 +53,6 @@ const deleteById = async (req, res) => {
     const quiz = await Quiz.findByIdAndDelete(req.params.id);
     return res.status(200).json({ message: "Question Deleted" });
   } catch (error) {
-    // console.log(error.message);
     return res.status(500).json({ message: "Something went wrong" });
   }
 };

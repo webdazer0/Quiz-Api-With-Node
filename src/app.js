@@ -1,16 +1,15 @@
 const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
-const Config = require("./config");
+const config = require("./config");
+const quizRoutes = require("./routes/quiz.routes");
 
-// Init
+// Initialize
 const app = express();
 require("./db");
 
-
-
 // Settings
-app.set("port", Config.PORT);
+app.set("port", config.PORT);
 
 // Middlewares
 app.use(morgan("dev"));
@@ -18,7 +17,7 @@ app.use(cors("*"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-// routes
-app.use("/api/quiz", require("./routes/quiz.routes"));
+// Routes
+app.use("/api", [quizRoutes]);
 
 module.exports = app;

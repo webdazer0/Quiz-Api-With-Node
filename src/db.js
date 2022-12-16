@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Config = require("./config");
+const config = require("./config");
 
 const optionsDB = {
   useNewUrlParser: true,
@@ -11,7 +11,7 @@ const optionsDB = {
 // IIFE (Immediately Invoked Function Expression) to use Async/Await
 (async () => {
   try {
-    await mongoose.connect(Config.MONGODB_URI, optionsDB);
+    await mongoose.connect(config.MONGODB_URI, optionsDB);
     console.log(`DB is connected`);
   } catch (err) {
     console.error(err);
