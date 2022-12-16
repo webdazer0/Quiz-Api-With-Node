@@ -1,7 +1,7 @@
 const { Router } = require("express");
-const router = Router();
 const quizController = require("../controller/quiz.controller");
 
+const router = Router();
 const myRoute = "/quiz";
 
 router

@@ -2,7 +2,8 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const config = require("./config");
-const quizRoutes = require("./routes/quiz.routes");
+const quizRoute = require("./routes/quiz.routes");
+const homeRoute = require("./routes/home.routes");
 
 // Initialize
 const app = express();
@@ -18,6 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 // Routes
-app.use("/api", [quizRoutes]);
+app.use("/", [homeRoute]);
+app.use("/api", [quizRoute]);
 
 module.exports = app;
