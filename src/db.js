@@ -4,13 +4,14 @@ import config from "./config.js";
 const optionsDB = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useFindAndModify: false,
-  useCreateIndex: true,
+  // useFindAndModify: false,
+  // useCreateIndex: true,
 };
 
 // IIFE (Immediately Invoked Function Expression) to use Async/Await
 (async () => {
   try {
+    mongoose.set("strictQuery", false);
     await mongoose.connect(config.MONGODB_URI, optionsDB);
     console.log(`DB is connected`);
   } catch (err) {

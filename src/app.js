@@ -6,7 +6,6 @@ import quizRoute from "./routes/quiz.routes.js";
 import homeRoute from "./routes/home.routes.js";
 
 // Initialize
-console.log("Initialize express");
 const app = express();
 import "./db.js";
 

@@ -1,6 +1,6 @@
 {
-  "name": "backend",
-  "version": "1.0.0",
+  "name": "quiz-app-be",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "type": "module",
@@ -20,15 +20,14 @@
   },
   "homepage": "https://github.com/webdazer0/Quiz-app-be#readme",
   "devDependencies": {
-    "nodemon": "^2.0.14"
+    "nodemon": "2.0.20"
   },
   "dependencies": {
-    "cors": "^2.8.5",
-    "cross-env": "^7.0.3",
-    "dotenv": "^16.0.3",
-    "express": "^4.17.1",
-    "fs-extra": "^9.0.1",
-    "mongoose": "^5.13.13",
-    "morgan": "^1.10.0"
+    "cors": "2.8.5",
+    "cross-env": "7.0.3",
+    "dotenv": "16.0.3",
+    "express": "4.18.2",
+    "mongoose": "6.8.0",
+    "morgan": "1.10.0"
   }
 }
