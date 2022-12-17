@@ -1,4 +1,7 @@
-const { Schema, model } = require("mongoose");
+import mongoose from "mongoose";
+const { model, Schema } = mongoose;
+
+const QUIZ_COLLECTION_NAME = "Quiz";
 
 const QuizSchema = new Schema({
   _id: { type: String },
@@ -7,4 +10,4 @@ const QuizSchema = new Schema({
   correct_answer: String,
 });
 
-module.exports = model("Quiz", QuizSchema);
+export default model(QUIZ_COLLECTION_NAME, QuizSchema);

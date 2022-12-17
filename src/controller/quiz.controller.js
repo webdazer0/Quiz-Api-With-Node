@@ -1,4 +1,4 @@
-const Quiz = require("../model/Quiz");
+import Quiz from "../model/Quiz.js";
 
 const getAll = async (req, res) => {
   try {
@@ -61,4 +61,4 @@ const deleteById = async (req, res) => {
   }
 };
 
-module.exports = { getAll, create, getById, updateById, deleteById };
+export default { getAll, create, getById, updateById, deleteById };

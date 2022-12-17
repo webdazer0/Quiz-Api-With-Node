@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon index.js",
     "start": "cross-env NODE_ENV=production node index.js"
@@ -24,7 +25,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
-    "dotenv": "^10.0.0",
+    "dotenv": "^16.0.3",
     "express": "^4.17.1",
     "fs-extra": "^9.0.1",
     "mongoose": "^5.13.13",

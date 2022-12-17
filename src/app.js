@@ -1,13 +1,14 @@
-const express = require("express");
-const morgan = require("morgan");
-const cors = require("cors");
-const config = require("./config");
-const quizRoute = require("./routes/quiz.routes");
-const homeRoute = require("./routes/home.routes");
+import express from "express";
+import config from "./config.js";
+import morgan from "morgan";
+import cors from "cors";
+import quizRoute from "./routes/quiz.routes.js";
+import homeRoute from "./routes/home.routes.js";
 
 // Initialize
+console.log("Initialize express");
 const app = express();
-require("./db");
+import "./db.js";
 
 // Settings
 app.set("port", config.PORT);
@@ -22,4 +23,5 @@ app.use(express.json());
 app.use("/", [homeRoute]);
 app.use("/api", [quizRoute]);
 
-module.exports = app;
+// module.exports = app;
+export default app;

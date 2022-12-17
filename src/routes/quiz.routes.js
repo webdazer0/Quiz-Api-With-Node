@@ -1,5 +1,5 @@
-const { Router } = require("express");
-const quizController = require("../controller/quiz.controller");
+import { Router } from "express";
+import quizController from "../controller/quiz.controller.js";
 
 const router = Router();
 const myRoute = "/quiz";
@@ -15,4 +15,4 @@ router
   .put(quizController.updateById)
   .delete(quizController.deleteById);
 
-module.exports = router;
+export default router;
