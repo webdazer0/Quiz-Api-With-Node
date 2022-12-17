@@ -15,7 +15,7 @@ const create = async (req, res) => {
     const newQuiz = new Quiz({ question, answers, correct_answer });
     console.log(newQuiz);
     await newQuiz.save();
-    return res.status(200).json({ message: "Question X Saved" });
+    return res.status(200).json({ message: `Question ${id} Saved` });
   } catch (error) {
     return res.status(500).json({ message: "Something went wrong" });
   }
@@ -25,10 +25,7 @@ const getById = async (req, res) => {
   try {
     const { id } = req.params;
 
-    console.log("id => ", id);
-
     const quiz = await Quiz.findById(id);
-    console.log("quiz => ", quiz);
     return res.status(200).json(quiz);
   } catch (error) {
     return res.status(500).json({ message: "Something went wrong" });
@@ -37,6 +34,7 @@ const getById = async (req, res) => {
 
 const updateById = async (req, res) => {
   try {
+    const { id } = req.params;
     const { question, correct_answer } = req.body;
 
     const payload = {
@@ -44,10 +42,10 @@ const updateById = async (req, res) => {
       correct_answer,
     };
 
-    const quiz = await Quiz.findByIdAndUpdate(req.params.id, payload);
+    // const quiz = await Quiz.findByIdAndUpdate(id, payload);
     // console.log(quiz);
     // findByIdAndUpdate ci ritornerà l'anteriore oggetto, si puo modificarlo e settarlo per ricevero quello nuovo/modified
-    return res.status(200).json({ message: "Question X Updated" });
+    return res.status(200).json({ message: `Question ${id} Updated` });
   } catch (error) {
     return res.status(500).json({ message: "Something went wrong" });
   }
@@ -55,8 +53,9 @@ const updateById = async (req, res) => {
 
 const deleteById = async (req, res) => {
   try {
-    const quiz = await Quiz.findByIdAndDelete(req.params.id);
-    return res.status(200).json({ message: "Question Deleted" });
+    const { id } = req.params;
+    // const quiz = await Quiz.findByIdAndDelete(id);
+    return res.status(200).json({ message: `Question ${id} Deleted` });
   } catch (error) {
     return res.status(500).json({ message: "Something went wrong" });
   }
