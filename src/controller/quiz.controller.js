@@ -23,7 +23,12 @@ const create = async (req, res) => {
 
 const getById = async (req, res) => {
   try {
-    const quiz = await Quiz.findById(req.params.id);
+    const { id } = req.params;
+
+    console.log("id => ", id);
+
+    const quiz = await Quiz.findById(id);
+    console.log("quiz => ", quiz);
     return res.status(200).json(quiz);
   } catch (error) {
     return res.status(500).json({ message: "Something went wrong" });
