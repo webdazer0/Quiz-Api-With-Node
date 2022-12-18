@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/webdazer0/Quiz-app-be.git"
+    "url": "git+https://github.com/webdazer0/quiz-app-be.git"
   },
   "keywords": [],
   "author": "Miguel T. Cruzado <webdazer0@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/webdazer0/Quiz-app-be/issues"
+    "url": "https://github.com/webdazer0/quiz-app-be/issues"
   },
-  "homepage": "https://github.com/webdazer0/Quiz-app-be#readme",
+  "homepage": "https://github.com/webdazer0/quiz-app-be#readme",
   "devDependencies": {
     "nodemon": "2.0.20"
   },

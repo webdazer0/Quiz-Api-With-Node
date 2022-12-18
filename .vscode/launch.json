@@ -7,7 +7,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Test-Quiz-app-be",
+            "name": "[DEV] quiz-app-be",
             "skipFiles": [
                 "<node_internals>/**"
             ],
